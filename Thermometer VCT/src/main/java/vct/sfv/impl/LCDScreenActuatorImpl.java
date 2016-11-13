@@ -1,23 +1,23 @@
-package sfv.impl;
+package vct.sfv.impl;
 
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Provides;
-import sfv.service.LCDScreenActuator;
+import vct.sfv.service.LCDScreenActuator;
 
 /**
  * Created by Mehdi TAZI (tazimehdi.com) on 06/11/2016.
  *
  * This java class is an implementation  of the Sensor Function Virtualization (SFV) component of the IoT virtualization approach,
- * which allows the virtualization of an LCD Screen.
+ * which allows the virtualization of of a temperature sensor.
  */
 @Component
 @Provides
-public class TemperatureSensorImpl implements LCDScreenActuator {
+public class LCDScreenActuatorImpl implements LCDScreenActuator {
 
     private int width;
     private int height;
 
-    TemperatureSensorImpl(){
+    public LCDScreenActuatorImpl(){
         this.width=16;
         this.height=2;
     }

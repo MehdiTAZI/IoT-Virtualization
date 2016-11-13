@@ -1,6 +1,6 @@
-package lfv.impl;
+package vct.lfv.impl;
 
-import lfv.service.TemperatureConverter;
+import vct.lfv.service.TemperatureConverter;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Provides;
 
@@ -11,7 +11,7 @@ import org.apache.felix.ipojo.annotations.Provides;
  * which allows the virtualization of the thermometer connected device application logics.
  */
 @Component
-@Provides
+@Provides//(specifications={TemperatureConverter.class})
 public class TemperatureConverterImpl implements TemperatureConverter {
 
     private static final double TO_F_FACTOR = (9.0/5.0);

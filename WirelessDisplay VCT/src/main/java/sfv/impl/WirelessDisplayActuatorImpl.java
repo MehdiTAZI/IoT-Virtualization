@@ -17,7 +17,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 public class WirelessDisplayActuatorImpl implements WirelessDisplayActuator {
 
     private WirelessCTDriver wirelessCTDriver;
-    WirelessDisplayActuatorImpl(){
+    public WirelessDisplayActuatorImpl(){
         wirelessCTDriver = new WirelessCTDriver();
     }
     public void displayText(String text) {
