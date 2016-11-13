@@ -1,6 +1,5 @@
-import vct.VirtualizedThermometer;
-import vct.lfv.consumer.TemperatureConverterConsumer;
-import vct.VirtualizedThermometerConsumer;
+import lfv.consumer.TemperatureConverterConsumer;
+import vct.VirtualThermometerConsumer;
 
 import java.util.Random;
 
@@ -12,7 +11,7 @@ import java.util.Random;
  */
 public class Main {
 
-    private VirtualizedThermometerConsumer virtualizedThermometerConsumer;
+    private VirtualThermometerConsumer virtualThermometerConsumer;
 
     private TemperatureConverterConsumer temperatureConverterConsumer;
 
@@ -28,7 +27,7 @@ public class Main {
         final double minTemp = - 10;
         final double maxTemp = 43;
         this.temperatureConverterConsumer = new TemperatureConverterConsumer();
-        this.virtualizedThermometerConsumer = new VirtualizedThermometerConsumer();
+        this.virtualThermometerConsumer = new VirtualThermometerConsumer();
 
         while(true){
             // 1 - read in degree from the thermometer hardware temperature sensor which is in celsius
@@ -40,8 +39,14 @@ public class Main {
 
             // 2.2 - Call the Logical Virtualization Function (LVF) of the VCT
             //double celsiusToFahrenheit = this.temperatureConverterConsumer.celsiusToFahrenheit(degree);
-            double celsiusToFahrenheit = this.virtualizedThermometerConsumer.celsiusToFahrenheit(degree);
-            System.out.println(celsiusToFahrenheit);
+            double celsiusToFahrenheit = 0;
+            try {
+                celsiusToFahrenheit = this.virtualThermometerConsumer.celsiusToFahrenheit(degree);
+                System.out.println(celsiusToFahrenheit);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+
             Thread.sleep(1000);
         }
     }

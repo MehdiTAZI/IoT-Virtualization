@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.lacl.research</groupId>
-    <artifactId>thermometer-vct</artifactId>
+    <artifactId>wireless-display-thermometer-cvct</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>
-        This application is an implementation of the Virtual Connected Thing (VCT) component of the IoT virtualization approach,
-        which allows the virtualization of the thermometer connected device.
+        This application is an implementation of the Composed Virtual Connected Thing (CVCT) component of the IoT virtualization approach,
+        which allows the composition of both the the thermometer connected device and the wireless display device.
     </description>
     <organization>
         <name>Mehdi TAZI</name>
@@ -53,8 +53,8 @@
                             ${project.artifactId}
                         </Bundle-SymbolicName>
                         <Export-Package>
-                            vct.lfv.service.TemperatureConverter
-                            vct.VirtualThermometer
+                            cvct.lfv.service.TemperatureConverter
+                            cvct.WirelessDisplayThermometer
                         </Export-Package>
                     </instructions>
                 </configuration>
