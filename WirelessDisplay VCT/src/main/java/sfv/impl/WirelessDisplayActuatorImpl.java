@@ -22,6 +22,6 @@ public class WirelessDisplayActuatorImpl implements WirelessDisplayActuator {
     }
     public void displayText(String text) {
         // 1 - call the CT
-        wirelessCTDriver.DisplayMessage(text);
+        wirelessCTDriver.displayMessage(text);
     }
 }

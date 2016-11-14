@@ -9,30 +9,35 @@ import java.net.URL;
 
 public class WirelessCTDriver {
 
-	private final String DISPLAY_END_POINT= "http://localhost:8080/wireless-dispay/";
-	public void DisplayMessage(final String message) {
+	/*public static void main(String[] args){
+		new WirelessCTDriver().displayMessage("hello mehdi");
+	}*/
+
+	private final String DISPLAY_END_POINT= "http://localhost:8080/wireless-display/";
+	private final String SPACE_HTTP_REPLACEMENT = "%20";
+	public void displayMessage(final String message) {
 
 	  try {
 
-		final URL url = new URL(DISPLAY_END_POINT + message);
-		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("GET");
-		conn.setRequestProperty("Accept", "application/json");
+		  final URL url = new URL(DISPLAY_END_POINT + message.replaceAll(" ",SPACE_HTTP_REPLACEMENT));
+		  HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+		  httpURLConnection.setRequestMethod("GET");
+		  httpURLConnection.setRequestProperty("Accept", "application/json");
 
-		if (conn.getResponseCode() != 200) {
+		if (httpURLConnection.getResponseCode() != 200) {
 			throw new RuntimeException("Failed : HTTP error code : "
-					+ conn.getResponseCode());
+					+ httpURLConnection.getResponseCode() + " \nMessage : " + httpURLConnection.getErrorStream());
 		}
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(
-			(conn.getInputStream())));
+			(httpURLConnection.getInputStream())));
 
 		String output;
 		while ((output = br.readLine()) != null) {
 			System.out.println(output);
 		}
 
-		conn.disconnect();
+		  httpURLConnection.disconnect();
 
 	  } catch (MalformedURLException e) {
 
