@@ -4,22 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
     <parent>
         <groupId>fr.lacl.research</groupId>
-        <artifactId>thermometer-vct</artifactId>
+        <artifactId>wireless-display-vct</artifactId>
         <version>1.0</version>
     </parent>
 
     <groupId>fr.lacl.research</groupId>
-    <artifactId>thermometer-vct-service</artifactId>
-    <name>Thermometer Service</name>
+    <artifactId>wireless-display-vct-service</artifactId>
     <version>1.0</version>
 
     <packaging>bundle</packaging>
 
     <description>
         This application is the service layer  of the Virtual Connected Thing (VCT) component of the IoT virtualization approach,
-        which allows the virtualization of the thermometer connected device.
+        which allows the virtualization of the wireless display connected device.
     </description>
 
     <build>
@@ -32,10 +32,8 @@
                 <configuration>
                     <instructions>
                         <Export-Package>
-                            lfv.service.TemperatureConverter
-                            sfv.service.LCDScreenActuator
-                            sfv.service.TemperatureSensor
-                            vct.service.VirtualThermometer
+                            sfv.service.WirelessDisplayActuator
+                            cvt.service.VirtualWirelessDisplay
                         </Export-Package>
                     </instructions>
                 </configuration>

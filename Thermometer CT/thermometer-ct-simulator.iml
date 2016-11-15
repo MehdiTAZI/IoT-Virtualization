@@ -11,6 +11,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: fr.lacl.research:thermometer-vct-service:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo:1.12.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.metadata:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm-all:5.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.gogo:1.12.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.annotations:1.12.1" level="project" />
   </component>
 </module>

@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="thermometer-vct-service" />
+    <orderEntry type="module" module-name="wireless-display-vct-service" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo:1.12.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.felix:org.apache.felix.ipojo.metadata:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-all:5.0.2" level="project" />

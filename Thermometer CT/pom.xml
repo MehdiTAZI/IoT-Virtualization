@@ -4,61 +4,64 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>fr.lacl.research</groupId>
+        <artifactId>iot-virtualization</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>fr.lacl.research</groupId>
     <artifactId>thermometer-ct-simulator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <packaging>bundle</packaging>
+
     <description>
         This application is a simulation of Connected Thing (CT) component of the IoT virtualization approach,
         which simulate the thermometer connected device.
     </description>
-    <organization>
-        <name>Mehdi TAZI</name>
-        <url>http://www.tazimehdi.com</url>
-    </organization>
+
 
     <dependencies>
-
-        <!-- Apache Felix iPOJO - OSGi -->
         <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
-            <version>1.12.1</version>
+            <groupId>fr.lacl.research</groupId>
+            <artifactId>thermometer-vct-service</artifactId>
+            <version>1.0</version>
         </dependency>
-
-
     </dependencies>
-
 
     <build>
         <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-                </configuration>
-            </plugin>
-
-            <!--
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.0.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>
-                            ${pom.artifactId}
-                        </Bundle-SymbolicName>
-                        <Export-Package>
-                            vct.lfv.service.converter.TemperatureConverter
-                        </Export-Package>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>*,!fr.lacl.research</Import-Package>
+                        <Embed-Dependency>lfv.service.TemperatureConverter</Embed-Dependency>
+                        <Embed-Dependency>sfv.service.LCDScreenActuator</Embed-Dependency>
+                        <Embed-Dependency>sfv.service.TemperatureSensor</Embed-Dependency>
+                        <Embed-Dependency>vct.service.VirtualThermometer</Embed-Dependency>
+                        <Private-Package>
+                            vct.VirtualThermometerConsumer
+                            ct.EmbeddedLogic
+                        </Private-Package>
                     </instructions>
                 </configuration>
             </plugin>
-            -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>ipojo-bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

@@ -2,6 +2,10 @@
 ## IoT Virtualization Proof Of Concept
 The puprpose of this source code is to proof our proposed approach of a virtualization IoT framework which is definied in the following PhD paper.
 
+micro-services approch
+
+each componen have a name, version and type
+
 ## Projects
 
 ### Thermometer CT

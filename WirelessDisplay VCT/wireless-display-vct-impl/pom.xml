@@ -6,26 +6,25 @@
 
     <parent>
         <groupId>fr.lacl.research</groupId>
-        <artifactId>thermometer-vct</artifactId>
+        <artifactId>wireless-display-vct</artifactId>
         <version>1.0</version>
     </parent>
 
     <groupId>fr.lacl.research</groupId>
-    <artifactId>thermometer-vct-impl</artifactId>
-    <name>Thermometer Implementation</name>
+    <artifactId>wireless-display-vct-impl</artifactId>
     <version>1.0</version>
 
     <packaging>bundle</packaging>
 
     <description>
         This application is an implementation of the Virtual Connected Thing (VCT) component of the IoT virtualization approach,
-        which allows the virtualization of the thermometer connected device.
+        which allows the virtualization of the wireless display connected device.
     </description>
 
     <dependencies>
         <dependency>
             <groupId>fr.lacl.research</groupId>
-            <artifactId>thermometer-vct-service</artifactId>
+            <artifactId>wireless-display-vct-service</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>
@@ -40,15 +39,11 @@
                 <configuration>
                     <instructions>
                         <Export-Package>
-                            lfv.service.TemperatureConverter
-                            sfv.service.LCDScreenActuator
-                            sfv.service.TemperatureSensor
-                            vct.service.VirtualThermometer
+                            sfv.service.WirelessDisplayActuator
+                            cvt.service.VirtualWirelessDisplay
                         </Export-Package>
                         <Private-Package>
-                            lfv.impl.TemperatureConverterImpl
-                            sfv.impl.LCDScreenActuatorImpl
-                            sfv.impl.TemperatureSensorImpl
+                            sfv.impl.WirelessDisplayActuatorImpl
                         </Private-Package>
                     </instructions>
                 </configuration>
