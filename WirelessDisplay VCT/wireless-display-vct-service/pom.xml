@@ -33,7 +33,7 @@
                     <instructions>
                         <Export-Package>
                             sfv.service.WirelessDisplayActuator
-                            cvt.service.VirtualWirelessDisplay
+                            vct.service.VirtualWirelessDisplay
                         </Export-Package>
                     </instructions>
                 </configuration>

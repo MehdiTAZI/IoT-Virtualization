@@ -1,6 +1,6 @@
 package vct.impl;
 
-import cvt.service.VirtualWirelessDisplay;
+import vct.service.VirtualWirelessDisplay;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Instantiate;
 import org.apache.felix.ipojo.annotations.Provides;

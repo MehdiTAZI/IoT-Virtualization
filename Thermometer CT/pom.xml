@@ -44,8 +44,8 @@
                         <Embed-Dependency>sfv.service.LCDScreenActuator</Embed-Dependency>
                         <Embed-Dependency>sfv.service.TemperatureSensor</Embed-Dependency>
                         <Embed-Dependency>vct.service.VirtualThermometer</Embed-Dependency>
+                        <Embed-Dependency>vct.service.VirtualThermometer</Embed-Dependency>
                         <Private-Package>
-                            vct.VirtualThermometerConsumer
                             ct.EmbeddedLogic
                         </Private-Package>
                     </instructions>

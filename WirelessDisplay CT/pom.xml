@@ -6,7 +6,7 @@
 
     <groupId>fr.lacl.research</groupId>
     <artifactId>wirelessdisplay-ct-simulator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <description>
         This application is a simulation of Connected Thing (CT) component of the IoT virtualization approach,
         which simulate the Wireless Display connected device.

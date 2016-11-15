@@ -32,7 +32,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
@@ -44,16 +43,20 @@
                             sfv.service.LCDScreenActuator
                             sfv.service.TemperatureSensor
                             vct.service.VirtualThermometer
-                        </Export-Package>
-                        <Private-Package>
                             lfv.impl.TemperatureConverterImpl
                             sfv.impl.LCDScreenActuatorImpl
                             sfv.impl.TemperatureSensorImpl
-                        </Private-Package>
+                            vct.impl.VirtualThermometerImpl
+                        </Export-Package>
+                     <!--   <Private-Package>
+                            lfv.impl.TemperatureConverterImpl
+                            sfv.impl.LCDScreenActuatorImpl
+                            sfv.impl.TemperatureSensorImpl
+                        </Private-Package>  -->
                     </instructions>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-ipojo-plugin</artifactId>
                 <executions>
@@ -63,7 +66,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 

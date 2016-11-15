@@ -4,63 +4,63 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>fr.lacl.research</groupId>
+        <artifactId>iot-virtualization</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>fr.lacl.research</groupId>
     <artifactId>wireless-display-thermometer-cvct</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+
+    <packaging>bundle</packaging>
+
     <description>
         This application is an implementation of the Composed Virtual Connected Thing (CVCT) component of the IoT virtualization approach,
         which allows the composition of both the the thermometer connected device and the wireless display device.
     </description>
+
+    <dependencies>
+        <dependency>
+            <groupId>fr.lacl.research</groupId>
+            <artifactId>thermometer-vct-service</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>fr.lacl.research</groupId>
+            <artifactId>wireless-display-vct-service</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
     <organization>
         <name>Mehdi TAZI</name>
         <url>http://www.tazimehdi.com</url>
     </organization>
 
-    <dependencies>
-
-        <!-- Apache Felix iPOJO - OSGi -->
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
-            <version>1.12.1</version>
-        </dependency>
-
-
-    </dependencies>
-
-
     <build>
         <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-                </configuration>
-            </plugin>
-
-
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.0.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-SymbolicName>
-                            ${project.artifactId}
-                        </Bundle-SymbolicName>
                         <Export-Package>
-                            cvct.lfv.service.TemperatureConverter
-                            cvct.WirelessDisplayThermometer
+                            lfv.service.TemperatureConverter
+                            sfv.service.LCDScreenActuator
+                            sfv.service.TemperatureSensor
+                            sfv.service.WirelessDisplayActuator
+                            vct.service.VirtualWirelessDisplay
+                            vct.service.VirtualThermometer
                         </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
+
 
 </project>

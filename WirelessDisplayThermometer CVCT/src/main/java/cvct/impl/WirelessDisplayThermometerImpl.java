@@ -1,7 +1,8 @@
-package cvct;
+package cvct.impl;
 
-import cvt.VirtualThermometer;
-import cvt.VirtualWirelessDisplay;
+import cvct.service.WirelessDisplayThermometer;
+import vct.service.VirtualThermometer;
+import vct.service.VirtualWirelessDisplay;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Provides;
 import org.apache.felix.ipojo.annotations.Requires;
