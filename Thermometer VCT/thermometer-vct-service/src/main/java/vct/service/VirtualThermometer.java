@@ -1,4 +1,4 @@
-package vct;
+package vct.service;
 
 import lfv.service.TemperatureConverter;
 import sfv.service.TemperatureSensor;

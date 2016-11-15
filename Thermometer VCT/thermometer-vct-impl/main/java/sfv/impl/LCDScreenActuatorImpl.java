@@ -12,6 +12,7 @@ import sfv.service.LCDScreenActuator;
  */
 @Component
 @Provides
+@Instantiate
 public class LCDScreenActuatorImpl implements LCDScreenActuator {
 
     private int width;

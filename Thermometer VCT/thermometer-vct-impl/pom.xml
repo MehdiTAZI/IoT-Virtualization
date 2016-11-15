@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.lacl.research</groupId>
+        <artifactId>thermometer-vct</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <groupId>fr.lacl.research</groupId>
+    <artifactId>thermometer-vct-impl</artifactId>
+    <name>Thermometer Implementation</name>
+    <version>1.0</version>
+
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>fr.lacl.research</groupId>
+            <artifactId>thermometer-vct-service</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            lfv.service.TemperatureConverter
+                            sfv.service.LCDScreenActuator
+                            sfv.service.TemperatureSensor
+                            vct.service.VirtualThermometer
+                        </Export-Package>
+                        <Private-Package>
+                            lfv.impl.TemperatureConverterImpl
+                            sfv.impl.LCDScreenActuatorImpl
+                            sfv.impl.TemperatureSensorImpl
+                            vct.impl.VirtualThermometerImpl
+                        </Private-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>ipojo-bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -13,6 +13,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  */
 @Component
 @Provides
+@Instantiate
 public class TemperatureSensorImpl implements TemperatureSensor {
 
     public void getTemperature(String text) {

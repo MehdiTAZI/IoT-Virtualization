@@ -7,6 +7,9 @@ import lfv.impl.TemperatureConverterImpl;
 import lfv.service.TemperatureConverter;
 import sfv.impl.TemperatureSensorImpl;
 import sfv.service.TemperatureSensor;
+import vct.service.VirtualThermometer;
+
+import java.lang.Integer;
 
 /**
  * Created by Mehdi TAZI (tazimehdi.com) on 13/11/2016.
@@ -15,20 +18,18 @@ import sfv.service.TemperatureSensor;
  * which allows the virtualization of the thermometer connected device.
  */
 @Component
-@Provides(
-            properties= {
-            @StaticServiceProperty(name="name", value="iThermometer", type="java.lang.String"),
-            @StaticServiceProperty(name="version", value="1.0", type="java.lang.Integer")
-            }/*,
-            specifications={TemperatureConverter.class,TemperatureSensor.class},
-            strategy="SERVICE/INSTANCE" -- new instance
-            */
-        )
-//@Instantiate --> reconfigure the variable for the next provide
+@Provides
+@Instantiate
 public class VirtualThermometerImpl implements VirtualThermometer {
 
     private TemperatureConverter temperatureConverter;
     private TemperatureSensor temperatureSensor;
+
+    @ServiceProperty(name="name", value="iThermometer")
+    public String name;
+
+    @ServiceProperty(name="version", value="1.0")
+    public Integer version;
 
     public VirtualThermometerImpl(){
         temperatureConverter = new TemperatureConverterImpl();
@@ -46,10 +47,10 @@ public class VirtualThermometerImpl implements VirtualThermometer {
         temperatureSensor.getTemperature(text);
     }
 
+}
 
-       /*
-    @ServiceProperty(name="name", value="iThermometer", mandatory=false)
-    private String name;
+
+/*
 
     @ServiceController(value=false, specification=FooService.class) --> set the field to true of false to unregister/register it from service registry
     private boolean controller; // Service Controller
@@ -63,5 +64,15 @@ public class VirtualThermometerImpl implements VirtualThermometer {
     public void unregistered(ServiceReference ref) {
         System.out.println("Unregistered");
     }
-    */
-}
+*/
+
+/*
+*     Provides (
+            properties= {
+            @StaticServiceProperty(name="name", value="iThermometer", type="java.lang.String"),
+            @StaticServiceProperty(name="version", value="1.0", type="java.lang.Integer")
+            }/*,
+            specifications={TemperatureConverter.class,TemperatureSensor.class},
+            strategy="SERVICE/INSTANCE" -- new instance
+)
+* */

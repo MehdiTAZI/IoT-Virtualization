@@ -2,6 +2,7 @@ package lfv.impl;
 
 import lfv.service.TemperatureConverter;
 import org.apache.felix.ipojo.annotations.Component;
+import org.apache.felix.ipojo.annotations.Instantiate;
 import org.apache.felix.ipojo.annotations.Provides;
 
 /**
@@ -12,6 +13,7 @@ import org.apache.felix.ipojo.annotations.Provides;
  */
 @Component
 @Provides//(specifications={TemperatureConverter.class})
+@Instantiate
 public class TemperatureConverterImpl implements TemperatureConverter {
 
     private static final double TO_F_FACTOR = (9.0/5.0);
